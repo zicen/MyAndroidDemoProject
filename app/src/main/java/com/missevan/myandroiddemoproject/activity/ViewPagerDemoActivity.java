@@ -37,9 +37,9 @@ public class ViewPagerDemoActivity extends AppCompatActivity implements OnTabSel
     private ViewPagerInfo catelogPagerInfo;
     private ViewPagerInfo livePagerInfo;
 
-    SimpleCardFragment recommendFragment = SimpleCardFragment.getInstance("推荐");
-    SimpleCardFragment catelogFragment = SimpleCardFragment.getInstance("分类");
-    SimpleCardFragment liveFragment = SimpleCardFragment.getInstance("直播");
+    private SimpleCardFragment recommendFragment = SimpleCardFragment.getInstance("推荐");
+    private SimpleCardFragment catelogFragment = SimpleCardFragment.getInstance("分类");
+    private SimpleCardFragment liveFragment = SimpleCardFragment.getInstance("直播");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,29 +60,28 @@ public class ViewPagerDemoActivity extends AppCompatActivity implements OnTabSel
         recommendPagerInfo = new ViewPagerInfo();
         recommendPagerInfo.setFragment(recommendFragment);
         recommendPagerInfo.setTitle("推荐");
-        recommendPagerInfo.setIndex(0);
+
         catelogPagerInfo = new ViewPagerInfo();
         catelogPagerInfo.setFragment(catelogFragment);
         catelogPagerInfo.setTitle("分类");
-        catelogPagerInfo.setIndex(1);
+
         livePagerInfo = new ViewPagerInfo();
         livePagerInfo.setFragment(liveFragment);
         livePagerInfo.setTitle("直播");
-        livePagerInfo.setIndex(0);
+
         mShowDatas.add(recommendPagerInfo);
         mShowDatas.add(catelogPagerInfo);
 
         // reload
         if (savedInstanceState != null) {
             boolean isShowLive = savedInstanceState.getBoolean("isShowLive");
-            if (isShowLive) mShowDatas.add(livePagerInfo);
+            if (isShowLive) mShowDatas.add(0,livePagerInfo);
         }
 
         mAdapter = new NewHomePagerFragmentAdapter(getSupportFragmentManager(), mShowDatas);
         mVpContainer.setAdapter(mAdapter);
         mTlBar.setViewPager(mVpContainer);
         mTlBar.setOnTabSelectListener(this);
-        mVpContainer.setCurrentItem(0);
 
     }
 
