@@ -10,6 +10,7 @@ import com.missevan.myandroiddemoproject.R;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button mBtnViewpager;
+    private Button mBtnSpan;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,7 +18,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         mBtnViewpager = findViewById(R.id.btn_viewpager);
+        mBtnSpan = findViewById(R.id.btn_span);
         mBtnViewpager.setOnClickListener(this);
+        mBtnSpan.setOnClickListener(this);
     }
 
     @Override
@@ -25,6 +28,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()) {
             case R.id.btn_viewpager:
                 startActivity(new Intent(this,ViewPagerDemoActivity.class));
+                break;
+            case R.id.btn_span:
+                startActivity(new Intent(this,DraweeSpanDemoActivity.class));
                 break;
         }
     }
