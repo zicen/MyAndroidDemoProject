@@ -1,4 +1,4 @@
-package com.missevan.myandroiddemoproject.activity;
+package com.zicen.myandroiddemoproject.activity;
 
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
@@ -11,9 +11,9 @@ import android.text.style.ImageSpan;
 import android.view.View;
 import android.widget.TextView;
 
-import com.missevan.myandroiddemoproject.R;
-import com.missevan.myandroiddemoproject.wight.draweetext.DraweeSpan;
-import com.missevan.myandroiddemoproject.wight.draweetext.DraweeTextView;
+import com.zicen.myandroiddemoproject.R;
+import com.zicen.myandroiddemoproject.wight.draweetext.DraweeSpan;
+import com.zicen.myandroiddemoproject.wight.draweetext.DraweeTextView;
 
 public class DraweeSpanDemoActivity extends AppCompatActivity {
     private TextView mTvAnnouncement;

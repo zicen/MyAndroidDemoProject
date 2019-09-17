@@ -1,4 +1,4 @@
-package com.missevan.myandroiddemoproject.activity;
+package com.zicen.myandroiddemoproject.activity;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
@@ -13,10 +13,10 @@ import android.widget.Toast;
 
 import com.flyco.tablayout.SlidingTabLayout;
 import com.flyco.tablayout.listener.OnTabSelectListener;
-import com.missevan.myandroiddemoproject.R;
-import com.missevan.myandroiddemoproject.adapter.NewHomePagerFragmentAdapter;
-import com.missevan.myandroiddemoproject.fragment.SimpleCardFragment;
-import com.missevan.myandroiddemoproject.model.ViewPagerInfo;
+import com.zicen.myandroiddemoproject.R;
+import com.zicen.myandroiddemoproject.adapter.NewHomePagerFragmentAdapter;
+import com.zicen.myandroiddemoproject.fragment.SimpleCardFragment;
+import com.zicen.myandroiddemoproject.model.ViewPagerInfo;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.missevan.myandroiddemoproject.model;
+package com.zicen.myandroiddemoproject.model;
 
 import android.support.v4.app.Fragment;
 

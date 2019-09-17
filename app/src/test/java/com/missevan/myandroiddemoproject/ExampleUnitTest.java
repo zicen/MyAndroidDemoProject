@@ -1,4 +1,4 @@
-package com.missevan.myandroiddemoproject;
+package com.zicen.myandroiddemoproject;
 
 import org.junit.Test;
 

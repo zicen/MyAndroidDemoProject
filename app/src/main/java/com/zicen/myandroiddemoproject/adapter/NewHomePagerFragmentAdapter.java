@@ -1,4 +1,4 @@
-package com.missevan.myandroiddemoproject.adapter;
+package com.zicen.myandroiddemoproject.adapter;
 
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
@@ -9,7 +9,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.view.ViewGroup;
 
-import com.missevan.myandroiddemoproject.model.ViewPagerInfo;
+import com.zicen.myandroiddemoproject.model.ViewPagerInfo;
 
 import java.util.ArrayList;
 import java.util.List;

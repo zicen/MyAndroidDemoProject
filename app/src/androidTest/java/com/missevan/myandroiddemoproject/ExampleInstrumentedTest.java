@@ -1,4 +1,4 @@
-package com.missevan.myandroiddemoproject;
+package com.zicen.myandroiddemoproject;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.missevan.myandroiddemoproject", appContext.getPackageName());
+        assertEquals("com.zicen.myandroiddemoproject", appContext.getPackageName());
     }
 }

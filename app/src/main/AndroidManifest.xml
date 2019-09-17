@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.missevan.myandroiddemoproject">
+    package="com.zicen.myandroiddemoproject">
 
     <application
         android:allowBackup="true"
@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.DraweeSpanDemoActivity"></activity>
+        <activity android:name=".activity.LeakActivity"></activity>
+        <activity android:name=".activity.DraweeSpanDemoActivity" />
         <activity android:name=".activity.ViewPagerDemoActivity" />
         <activity android:name=".activity.MainActivity">
             <intent-filter>

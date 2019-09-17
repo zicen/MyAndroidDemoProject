@@ -1,4 +1,4 @@
-package com.missevan.myandroiddemoproject.fragment;
+package com.zicen.myandroiddemoproject.fragment;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.missevan.myandroiddemoproject.R;
+import com.zicen.myandroiddemoproject.R;
 
 @SuppressLint("ValidFragment")
 public class SimpleCardFragment extends Fragment {

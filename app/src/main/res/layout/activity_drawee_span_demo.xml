@@ -27,7 +27,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.missevan.myandroiddemoproject.wight.draweetext.DraweeTextView
+    <com.zicen.myandroiddemoproject.wight.draweetext.DraweeTextView
         android:id="@+id/tv_announcement2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
