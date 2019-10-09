@@ -28,10 +28,17 @@ dependencies {
     implementation "com.facebook.fresco:animated-base:${rootProject.ext.frescoVersion}"
     implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibraryVersion}"
     implementation "com.android.support:support-v4:${rootProject.ext.supportLibraryVersion}"
+
+    // TabLayout
     implementation 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
-    // To get SwipeBack feature, rely on both fragmentation & fragmentation-swipeback
+    // fragmentationx
     implementation 'me.yokeyword:fragmentationx:1.0.1'
-    // Swipeback is based on fragmentation. Refer to SwipeBackActivity/Fragment for your Customized SupportActivity/Fragment
     implementation 'me.yokeyword:fragmentationx-swipeback:1.0.1'
+    // leakcanary
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.3'
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.3'
+    // 只有在你使用了 support library fragments 的时候才需要下面这一项
+    debugImplementation 'com.squareup.leakcanary:leakcanary-support-fragment:1.6.3'
+
 
 }

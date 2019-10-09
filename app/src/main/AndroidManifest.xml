@@ -3,15 +3,17 @@
     package="com.zicen.myandroiddemoproject">
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.LeakActivity"></activity>
-        <activity android:name=".activity.DraweeSpanDemoActivity" />
-        <activity android:name=".activity.ViewPagerDemoActivity" />
+        <activity android:name=".home.HomeActivity"></activity>
+        <activity android:name=".leak.MemoryLeakActivity" />
+        <activity android:name=".tick.LeakActivity" />
+        <activity android:name=".dynamicfragment.ViewPagerDemoActivity" />
         <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

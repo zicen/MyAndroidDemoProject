@@ -1,4 +1,4 @@
-package com.zicen.myandroiddemoproject.wight;
+package com.zicen.myandroiddemoproject.dynamicfragment;
 
 import android.content.Context;
 import android.os.Bundle;

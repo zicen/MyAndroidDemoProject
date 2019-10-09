@@ -1,4 +1,4 @@
-package com.zicen.myandroiddemoproject.fragment;
+package com.zicen.myandroiddemoproject.dynamicfragment;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;

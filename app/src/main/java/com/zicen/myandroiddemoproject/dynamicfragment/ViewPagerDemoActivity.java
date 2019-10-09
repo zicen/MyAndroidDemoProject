@@ -1,12 +1,9 @@
-package com.zicen.myandroiddemoproject.activity;
+package com.zicen.myandroiddemoproject.dynamicfragment;
 
 import android.content.Context;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
+import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -14,9 +11,6 @@ import android.widget.Toast;
 import com.flyco.tablayout.SlidingTabLayout;
 import com.flyco.tablayout.listener.OnTabSelectListener;
 import com.zicen.myandroiddemoproject.R;
-import com.zicen.myandroiddemoproject.adapter.NewHomePagerFragmentAdapter;
-import com.zicen.myandroiddemoproject.fragment.SimpleCardFragment;
-import com.zicen.myandroiddemoproject.model.ViewPagerInfo;
 
 import java.util.ArrayList;
 import java.util.List;

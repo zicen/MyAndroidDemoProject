@@ -5,9 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.ViewPagerDemoActivity">
+    tools:context=".dynamicfragment.ViewPagerDemoActivity">
 
-    <com.zicen.myandroiddemoproject.wight.FixNpeSlidingTabLayout
+    <com.zicen.myandroiddemoproject.dynamicfragment.FixNpeSlidingTabLayout
         android:id="@+id/tl_bar"
         android:layout_width="match_parent"
         android:layout_height="48dp"

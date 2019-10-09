@@ -1,4 +1,4 @@
-package com.zicen.myandroiddemoproject.model;
+package com.zicen.myandroiddemoproject.dynamicfragment;
 
 import android.support.v4.app.Fragment;
 

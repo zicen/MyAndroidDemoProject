@@ -1,4 +1,4 @@
-package com.zicen.myandroiddemoproject.leak;
+package com.zicen.myandroiddemoproject.tick;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -14,12 +14,10 @@ import java.lang.ref.WeakReference;
 public class TickHandler extends Handler {
     private long totalTickTime = 0;
     private boolean isTicking = false;
-    private TextView stateText;
     private WeakReference<Context> wContext;
 
-    public TickHandler(Context context, TextView stateText) {
+    public TickHandler(Context context) {
         this.wContext = new WeakReference<>(context);
-        this.stateText = stateText;
     }
 
     /**
@@ -66,18 +64,16 @@ public class TickHandler extends Handler {
      * @param isLive true: on-line false: off-line
      */
     private void updateLiveState(boolean isLive) {
-        if (stateText == null || wContext.get() == null) {
-            return;
+        if (listener != null) {
+            listener.onTickStateChanged(isLive);
         }
-        stateText.setText(isLive ? "" : " 暂无直播 ");
     }
 
     @Override
     public void handleMessage(Message msg) {
-        if (stateText == null) return;
         totalTickTime += 1000;
-        if (wContext.get() != null) {
-            stateText.setText(" 正在直播 " + DateConvertUtils.getTime(totalTickTime));
+        if (wContext.get() != null && listener != null) {
+            listener.onTickTimeChanged(totalTickTime);
         }
         //每秒更新一次
         if (isTicking) {
@@ -94,4 +90,15 @@ public class TickHandler extends Handler {
         return totalTickTime;
     }
 
+    private OnTickListener listener;
+
+    public void setOnTickChangedListener(OnTickListener listener) {
+        this.listener = listener;
+    }
+
+    public interface OnTickListener {
+        void onTickStateChanged(boolean state);
+
+        void onTickTimeChanged(long tickTime);
+    }
 }
