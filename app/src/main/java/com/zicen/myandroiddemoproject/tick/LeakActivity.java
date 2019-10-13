@@ -1,14 +1,13 @@
 package com.zicen.myandroiddemoproject.tick;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.zicen.myandroiddemoproject.MyApplication;
 import com.zicen.myandroiddemoproject.R;
-import com.zicen.myandroiddemoproject.tick.TickHandler;
 import com.zicen.myandroiddemoproject.utils.DateConvertUtils;
 
 public class LeakActivity extends AppCompatActivity implements View.OnClickListener, TickHandler.OnTickListener {

@@ -1,6 +1,6 @@
 package com.zicen.myandroiddemoproject.dynamicfragment;
 
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 
 public class ViewPagerInfo {
     private Fragment fragment;
