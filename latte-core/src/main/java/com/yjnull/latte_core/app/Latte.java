@@ -3,8 +3,6 @@ package com.yjnull.latte_core.app;
 import android.content.Context;
 import android.os.Handler;
 
-import java.util.HashMap;
-
 /**
  * Created by zicen on 2018/7/2
  */
