@@ -17,7 +17,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 /**
- * Created by Yangya on 2018/7/4
+ * Created by zicen on 2018/7/4
  */
 public class DownloadHandler {
 

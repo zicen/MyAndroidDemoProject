@@ -9,7 +9,7 @@ import com.wang.avi.Indicator;
 import java.util.WeakHashMap;
 
 /**
- * Created by Yangya on 2018/7/4
+ * Created by zicen on 2018/7/4
  */
 public class LoaderCreator {
 

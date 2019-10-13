@@ -3,7 +3,7 @@ package com.yjnull.latte_core.app;
 import com.yjnull.latte_core.util.storage.LattePreference;
 
 /**
- * Created by Yangya on 2018/7/9
+ * Created by zicen on 2018/7/9
  * 管理用户信息
  */
 public class AccountManager {

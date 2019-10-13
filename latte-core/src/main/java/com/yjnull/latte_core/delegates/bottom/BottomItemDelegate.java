@@ -7,7 +7,7 @@ import com.yjnull.latte_core.app.Latte;
 import com.yjnull.latte_core.delegates.LatteDelegate;
 
 /**
- * Created by Yangya on 2018/7/10
+ * Created by zicen on 2018/7/10
  * 每个底部导航栏对应的页面抽象
  */
 public abstract class BottomItemDelegate extends LatteDelegate {

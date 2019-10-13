@@ -5,7 +5,7 @@ import androidx.annotation.NonNull;
 import java.util.HashMap;
 
 /**
- * Created by Yangya on 2018/7/13
+ * Created by zicen on 2018/7/13
  */
 public class EventManager {
 

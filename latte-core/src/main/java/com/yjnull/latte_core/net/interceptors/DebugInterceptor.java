@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RawRes;
 
 import com.yjnull.latte_core.util.file.FileUtil;
-import com.yjnull.latte_core.util.log.LatteLogger;
 
 import java.io.IOException;
 
@@ -14,7 +13,7 @@ import okhttp3.Response;
 import okhttp3.ResponseBody;
 
 /**
- * Created by Yangya on 2018/7/5
+ * Created by zicen on 2018/7/5
  */
 public class DebugInterceptor extends BaseInterceptor {
 
@@ -45,7 +44,6 @@ public class DebugInterceptor extends BaseInterceptor {
     @Override
     public Response intercept(@NonNull Chain chain) throws IOException {
         final String url = chain.request().url().toString();
-        LatteLogger.d(url + "  " + chain.request().method());
         if (url.contains(DEBUG_URL)) {
             return debugResponse(chain, DEBUG_RAW_ID);
         }

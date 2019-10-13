@@ -6,14 +6,14 @@ import android.view.Gravity;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.blankj.utilcode.util.ScreenUtils;
 import com.wang.avi.AVLoadingIndicatorView;
 import com.yjnull.latte_core.R;
-import com.yjnull.latte_core.util.dimen.DimenUtil;
 
 import java.util.ArrayList;
 
 /**
- * Created by Yangya on 2018/7/4
+ * Created by zicen on 2018/7/4
  */
 public class LatteLoader {
 
@@ -34,8 +34,8 @@ public class LatteLoader {
         final AVLoadingIndicatorView avLoadingIndicatorView = LoaderCreator.create(type, context);
         dialog.setContentView(avLoadingIndicatorView);
 
-        int deviceWidth = DimenUtil.getScreenWidth();
-        int deviceHeight = DimenUtil.getScreenHeight();
+        int deviceWidth = ScreenUtils.getScreenWidth();
+        int deviceHeight = ScreenUtils.getScreenHeight();
 
         final Window dialogWindow = dialog.getWindow();
         if (dialogWindow != null) {

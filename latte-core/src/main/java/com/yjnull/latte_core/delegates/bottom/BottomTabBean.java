@@ -1,7 +1,7 @@
 package com.yjnull.latte_core.delegates.bottom;
 
 /**
- * Created by Yangya on 2018/7/10
+ * Created by zicen on 2018/7/10
  */
 public final class BottomTabBean {
     private final CharSequence ICON;

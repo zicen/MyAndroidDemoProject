@@ -23,7 +23,7 @@ import butterknife.BindView;
 import me.yokeyword.fragmentation.ISupportFragment;
 
 /**
- * Created by Yangya on 2018/7/10
+ * Created by zicen on 2018/7/10
  */
 public abstract class BaseBottomDelegate extends LatteDelegate implements View.OnClickListener{
 

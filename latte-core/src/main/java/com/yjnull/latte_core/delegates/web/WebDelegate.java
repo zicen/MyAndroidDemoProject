@@ -14,7 +14,7 @@ import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;
 
 /**
- * Created by Yangya on 2018/7/13
+ * Created by zicen on 2018/7/13
  */
 public abstract class WebDelegate extends LatteDelegate implements IWebViewInitializer{
 

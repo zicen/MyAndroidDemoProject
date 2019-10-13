@@ -7,7 +7,7 @@ import com.yjnull.latte_core.delegates.web.event.Event;
 import com.yjnull.latte_core.delegates.web.event.EventManager;
 
 /**
- * Created by Yangya on 2018/7/13
+ * Created by zicen on 2018/7/13
  * 用来和原生进行交互的
  */
 final class LatteWebInterface {

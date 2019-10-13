@@ -3,7 +3,7 @@ package com.yjnull.latte_core.util.callback;
 import java.util.WeakHashMap;
 
 /**
- * Created by Yangya on 2018/7/16
+ * Created by zicen on 2018/7/16
  */
 public class CallbackManager {
 

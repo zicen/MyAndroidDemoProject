@@ -14,7 +14,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 /**
- * Created by yangya on 2018/7/3.
+ * Created by zicen on 2018/7/3.
  * RestCreator
  */
 

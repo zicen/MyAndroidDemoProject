@@ -1,7 +1,7 @@
 package com.yjnull.latte_core.ui.loader;
 
 /**
- * Created by Yangya on 2018/7/4
+ * Created by zicen on 2018/7/4
  */
 @SuppressWarnings("unused")
 public enum  LoaderStyle {

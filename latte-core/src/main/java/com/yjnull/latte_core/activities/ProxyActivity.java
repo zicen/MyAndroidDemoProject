@@ -15,7 +15,7 @@ import me.yokeyword.fragmentation.SupportActivityDelegate;
 import me.yokeyword.fragmentation.anim.FragmentAnimator;
 
 /**
- * Created by Yangya on 2018/7/3
+ * Created by zicen on 2018/7/3
  */
 public abstract class ProxyActivity extends AppCompatActivity implements ISupportActivity {
 
