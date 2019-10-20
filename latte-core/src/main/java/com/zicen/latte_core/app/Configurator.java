@@ -2,19 +2,13 @@ package com.zicen.latte_core.app;
 
 import android.app.Activity;
 import android.os.Handler;
-import androidx.annotation.NonNull;
 
 import com.blankj.utilcode.util.Utils;
-import com.joanzapata.iconify.IconFontDescriptor;
-import com.joanzapata.iconify.Iconify;
-import com.orhanobut.logger.AndroidLogAdapter;
-import com.orhanobut.logger.Logger;
-import com.zicen.latte_core.fragment.web.event.Event;
-import com.zicen.latte_core.fragment.web.event.EventManager;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import androidx.annotation.NonNull;
 import okhttp3.Interceptor;
 
 /**
@@ -25,7 +19,6 @@ import okhttp3.Interceptor;
 public class Configurator {
 
     private static final HashMap<Object, Object> LATTE_CONFIGS = new HashMap<>();
-    private static final ArrayList<IconFontDescriptor> ICONS = new ArrayList<>();
     private static final ArrayList<Interceptor> INTERCEPTORS = new ArrayList<>();
     private static final Handler HANDLER = new Handler();
 
@@ -48,8 +41,6 @@ public class Configurator {
     }
 
     public final void configure() {
-        initIcons();
-        Logger.addLogAdapter(new AndroidLogAdapter());
         LATTE_CONFIGS.put(ConfigKeys.CONFIG_READY, true);
         Utils.init(Latte.getApplicationContext());
     }
@@ -61,20 +52,6 @@ public class Configurator {
 
     public final Configurator withLoaderDelayed(long delayed) {
         LATTE_CONFIGS.put(ConfigKeys.LOADER_DELAYED, delayed);
-        return this;
-    }
-
-    private void initIcons() {
-        if (ICONS.size() > 0) {
-            final Iconify.IconifyInitializer initializer = Iconify.with(ICONS.get(0));
-            for (int i = 1; i < ICONS.size(); i++) {
-                initializer.with(ICONS.get(i));
-            }
-        }
-    }
-
-    public final Configurator withIcon(IconFontDescriptor descriptor) {
-        ICONS.add(descriptor);
         return this;
     }
 
@@ -110,11 +87,11 @@ public class Configurator {
         return this;
     }
 
-    public Configurator withWebEvent(@NonNull String name, @NonNull Event event) {
-        final EventManager manager = EventManager.getInstance();
-        manager.addEvent(name, event);
-        return this;
-    }
+//    public Configurator withWebEvent(@NonNull String name, @NonNull Event event) {
+//        final EventManager manager = EventManager.getInstance();
+//        manager.addEvent(name, event);
+//        return this;
+//    }
 
     private void checkConfiguration() {
         final boolean isReady = (boolean) LATTE_CONFIGS.get(ConfigKeys.CONFIG_READY);

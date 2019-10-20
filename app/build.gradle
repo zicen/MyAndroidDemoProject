@@ -55,9 +55,6 @@ dependencies {
     // TabLayout
     implementation 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
-//    // fragmentation
-//    implementation 'me.yokeyword:fragmentation:1.3.7'
-//    implementation 'me.yokeyword:fragmentation-swipeback:1.3.7'
     // leakcanary
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.3'
     releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.3'

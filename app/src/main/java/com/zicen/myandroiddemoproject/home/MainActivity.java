@@ -2,6 +2,7 @@ package com.zicen.myandroiddemoproject.home;
 
 import android.os.Bundle;
 
+import com.jaeger.library.StatusBarUtil;
 import com.zicen.latte_core.activities.ProxyActivity;
 import com.zicen.latte_core.app.Latte;
 

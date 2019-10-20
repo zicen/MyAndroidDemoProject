@@ -19,7 +19,7 @@ public class MainFragment extends BaseBottomDelegate {
         final LinkedHashMap<BottomTabBean, BaseMainFragment> items = new LinkedHashMap<>();
         items.put(new BottomTabBean(R.mipmap.ic_discover_white_24dp, "发现"), new DiscoverFragment());
         items.put(new BottomTabBean(R.mipmap.ic_message_white_24dp, "消息"), new IndexFragment());
-        items.put(new BottomTabBean(R.mipmap.ic_account_circle_white_24dp, "账户"), new IndexFragment());
+        items.put(new BottomTabBean(R.mipmap.ic_account_circle_white_24dp, "账户"), new WebFragment());
         return items;
     }
 
