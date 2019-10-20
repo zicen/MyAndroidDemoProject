@@ -1,4 +1,4 @@
-package com.yjnull.latte_core;
+package com.zicen.latte_core;
 
 import org.junit.Test;
 

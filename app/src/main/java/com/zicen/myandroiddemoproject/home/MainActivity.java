@@ -2,8 +2,8 @@ package com.zicen.myandroiddemoproject.home;
 
 import android.os.Bundle;
 
-import com.yjnull.latte_core.activities.ProxyActivity;
-import com.yjnull.latte_core.app.Latte;
+import com.zicen.latte_core.activities.ProxyActivity;
+import com.zicen.latte_core.app.Latte;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;

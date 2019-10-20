@@ -1,9 +1,9 @@
 package com.zicen.myandroiddemoproject.home;
 
-import com.yjnull.latte_core.fragment.BaseMainFragment;
-import com.yjnull.latte_core.fragment.bottom.BaseBottomDelegate;
-import com.yjnull.latte_core.fragment.bottom.BottomTabBean;
-import com.yjnull.latte_core.fragment.bottom.ItemBuilder;
+import com.zicen.latte_core.fragment.BaseMainFragment;
+import com.zicen.latte_core.fragment.bottom.BaseBottomDelegate;
+import com.zicen.latte_core.fragment.bottom.BottomTabBean;
+import com.zicen.latte_core.fragment.bottom.ItemBuilder;
 import com.zicen.myandroiddemoproject.R;
 
 import java.util.LinkedHashMap;

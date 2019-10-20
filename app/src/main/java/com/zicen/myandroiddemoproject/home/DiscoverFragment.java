@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.blankj.utilcode.util.ToastUtils;
-import com.yjnull.latte_core.fragment.BaseMainFragment;
+import com.zicen.latte_core.fragment.BaseMainFragment;
 import com.zicen.myandroiddemoproject.R;
 import com.zicen.myandroiddemoproject.R2;
 

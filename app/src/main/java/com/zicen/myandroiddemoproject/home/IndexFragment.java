@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 
 
-import com.yjnull.latte_core.fragment.BaseMainFragment;
+import com.zicen.latte_core.fragment.BaseMainFragment;
 import com.zicen.myandroiddemoproject.R;
 
 

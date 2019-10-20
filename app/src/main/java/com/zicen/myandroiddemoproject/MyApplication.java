@@ -5,8 +5,7 @@ import android.app.Application;
 import com.joanzapata.iconify.fonts.FontAwesomeModule;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
-import com.yjnull.latte_core.app.Latte;
-import com.yjnull.latte_core.net.interceptors.DebugInterceptor;
+import com.zicen.latte_core.app.Latte;
 
 
 public class MyApplication extends Application {
