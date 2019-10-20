@@ -1,6 +1,7 @@
 package com.yjnull.latte_core.fragment.web;
 
 import android.annotation.SuppressLint;
+import android.os.Build;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -13,7 +14,9 @@ public class WebViewInitializer {
     @SuppressLint("SetJavaScriptEnabled")
     public WebView createWebView(WebView webView) {
 
-        WebView.setWebContentsDebuggingEnabled(true);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            WebView.setWebContentsDebuggingEnabled(true);
+        }
         //不能横向滚动
         webView.setHorizontalScrollBarEnabled(false);
         //不能纵向滚动
@@ -39,8 +42,11 @@ public class WebViewInitializer {
         settings.setSupportZoom(false);
         //文件权限
         settings.setAllowFileAccess(true);
-        settings.setAllowFileAccessFromFileURLs(true);
-        settings.setAllowUniversalAccessFromFileURLs(true);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+            settings.setAllowFileAccessFromFileURLs(true);
+            settings.setAllowUniversalAccessFromFileURLs(true);
+        }
         settings.setAllowContentAccess(true);
         //缓存相关
         settings.setAppCacheEnabled(true);

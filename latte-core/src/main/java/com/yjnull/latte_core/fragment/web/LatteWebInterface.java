@@ -12,14 +12,14 @@ import com.yjnull.latte_core.fragment.web.event.EventManager;
  */
 final class LatteWebInterface {
 
-    private final WebFragment DELEGATE;
+    private final WebFragment FRAGMENT;
 
-    private LatteWebInterface(WebFragment delegate) {
-        this.DELEGATE = delegate;
+    private LatteWebInterface(WebFragment fragment) {
+        this.FRAGMENT = fragment;
     }
 
-    static LatteWebInterface create(WebFragment delegate) {
-        return new LatteWebInterface(delegate);
+    static LatteWebInterface create(WebFragment fragment) {
+        return new LatteWebInterface(fragment);
     }
 
     @SuppressWarnings("unused")
@@ -29,9 +29,9 @@ final class LatteWebInterface {
         final Event event = EventManager.getInstance().createEvent(action);
         if (event != null) {
             event.setAction(action);
-            event.setDelegate(DELEGATE);
-            event.setContext(DELEGATE.getContext());
-            event.setUrl(DELEGATE.getUrl());
+            event.setFragment(FRAGMENT);
+            event.setContext(FRAGMENT.getContext());
+            event.setUrl(FRAGMENT.getUrl());
             return event.execute(params);
         }
         return null;

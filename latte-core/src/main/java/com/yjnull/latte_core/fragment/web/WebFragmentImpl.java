@@ -1,7 +1,9 @@
 package com.yjnull.latte_core.fragment.web;
 
 import android.os.Bundle;
+
 import androidx.annotation.Nullable;
+
 import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
@@ -15,14 +17,14 @@ import com.yjnull.latte_core.fragment.web.route.Router;
 /**
  * Created by zicen on 2018/7/13
  */
-public class WebDelegateImpl extends WebFragment {
+public class WebFragmentImpl extends WebFragment {
 
     private IPageLoadListener mIPageLoadListener = null;
 
-    public static WebDelegateImpl create(String url) {
+    public static WebFragmentImpl create(String url) {
         final Bundle args = new Bundle();
         args.putString(RouteKeys.URL.name(), url);
-        final WebDelegateImpl delegate = new WebDelegateImpl();
+        final WebFragmentImpl delegate = new WebFragmentImpl();
         delegate.setArguments(args);
         return delegate;
     }
@@ -37,7 +39,7 @@ public class WebDelegateImpl extends WebFragment {
     }
 
     @Override
-    public void onBindView(@Nullable Bundle savedInstanceState, View rootView) {
+    protected void initView(Bundle savedInstanceState, View rootView) {
         if (getUrl() != null) {
             //用原生的方式模拟Web跳转并进行页面加载
             Router.getInstance().loadPage(this, getUrl());
@@ -65,4 +67,5 @@ public class WebDelegateImpl extends WebFragment {
     public WebChromeClient initWebChromeClient() {
         return new WebChromeClientImpl();
     }
+
 }

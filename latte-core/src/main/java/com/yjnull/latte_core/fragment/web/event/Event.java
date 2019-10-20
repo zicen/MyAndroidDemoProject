@@ -3,8 +3,9 @@ package com.yjnull.latte_core.fragment.web.event;
 import android.content.Context;
 import android.webkit.WebView;
 
-import com.yjnull.latte_core.fragment.BaseFragment;
 import com.yjnull.latte_core.fragment.web.WebFragment;
+
+import me.yokeyword.fragmentation.ISupportFragment;
 
 /**
  * Created by zicen on 2018/7/13
@@ -13,12 +14,12 @@ public abstract class Event implements IEvent {
 
     private Context mContent = null;
     private String mAction = null;
-    private WebFragment mDelegate = null;
+    private WebFragment mFragment = null;
     private String mUrl = null;
     private WebView mWebView = null;
 
     public WebView getWebView(){
-        return mDelegate.getWebView();
+        return mFragment.getWebView();
     }
 
     public Context getContext() {
@@ -37,12 +38,12 @@ public abstract class Event implements IEvent {
         this.mAction = mAction;
     }
 
-    public BaseFragment getDelegate() {
-        return mDelegate;
+    public ISupportFragment getFragment() {
+        return mFragment;
     }
 
-    public void setDelegate(WebFragment mDelegate) {
-        this.mDelegate = mDelegate;
+    public void setFragment(WebFragment mFragment) {
+        this.mFragment = mFragment;
     }
 
     public String getUrl() {

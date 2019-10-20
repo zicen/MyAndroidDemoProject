@@ -3,11 +3,14 @@ package com.yjnull.latte_core.fragment.web;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
+import me.yokeyword.fragmentation.ISupportFragment;
+import me.yokeyword.fragmentation_swipeback.SwipeBackFragment;
+
 import android.webkit.WebView;
 
 import com.yjnull.latte_core.app.ConfigKeys;
 import com.yjnull.latte_core.app.Latte;
-import com.yjnull.latte_core.fragment.BaseFragment;
+import com.yjnull.latte_core.fragment.BaseBackFragment;
 import com.yjnull.latte_core.fragment.web.route.RouteKeys;
 
 import java.lang.ref.ReferenceQueue;
@@ -16,13 +19,13 @@ import java.lang.ref.WeakReference;
 /**
  * Created by zicen on 2018/7/13
  */
-public abstract class WebFragment extends BaseFragment implements IWebViewInitializer{
+public abstract class WebFragment extends BaseBackFragment implements IWebViewInitializer{
 
     private WebView mWebView = null;
     private final ReferenceQueue<WebView> WEB_VIEW_QUEUE = new ReferenceQueue<>();
     private String mUrl = null;
     private boolean mIsWebViewAvailable = false;
-    private BaseFragment mTopDelegate= null;
+    private ISupportFragment mTopFragment= null;
 
     public WebFragment() {
     }
@@ -39,7 +42,9 @@ public abstract class WebFragment extends BaseFragment implements IWebViewInitia
         initWebView();
     }
 
-    @SuppressLint("JavascriptInterface")
+
+
+    @SuppressLint({"JavascriptInterface", "AddJavascriptInterface"})
     private void initWebView() {
         if (mWebView != null) {
             mWebView.removeAllViews();
@@ -62,15 +67,15 @@ public abstract class WebFragment extends BaseFragment implements IWebViewInitia
         }
     }
 
-    public void setTopDelegate(BaseFragment delegate) {
-        mTopDelegate = delegate;
+    public void setTopFragment(ISupportFragment fragment) {
+        mTopFragment = fragment;
     }
 
-    public BaseFragment getTopDelegate() {
-        if (mTopDelegate == null) {
-            mTopDelegate = this;
+    public ISupportFragment getTopFragment() {
+        if (mTopFragment == null) {
+            mTopFragment = this;
         }
-        return mTopDelegate;
+        return mTopFragment;
     }
 
     public WebView getWebView() {

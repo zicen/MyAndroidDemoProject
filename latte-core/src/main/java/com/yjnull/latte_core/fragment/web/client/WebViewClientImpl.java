@@ -14,21 +14,21 @@ import com.yjnull.latte_core.ui.loader.LatteLoader;
  */
 public class WebViewClientImpl extends WebViewClient {
 
-    private final WebFragment DELEGATE;
+    private final WebFragment FRAGMENT;
     private IPageLoadListener mIPageLoadListener = null;
 
     public void setPageLoadListener(IPageLoadListener listener) {
         this.mIPageLoadListener = listener;
     }
 
-    public WebViewClientImpl(WebFragment delegate) {
-        this.DELEGATE = delegate;
+    public WebViewClientImpl(WebFragment fragment) {
+        this.FRAGMENT = fragment;
     }
 
     @Override
     public boolean shouldOverrideUrlLoading(WebView view, String url) {
         //false 由webview处理事件, true 由我们处理事件
-        return Router.getInstance().handleWebUrl(DELEGATE, url);
+        return Router.getInstance().handleWebUrl(FRAGMENT, url);
     }
 
     @Override

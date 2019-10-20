@@ -16,7 +16,7 @@
         tools:replace="android:appComponentFactory">
         <activity android:name=".leak.MemoryLeakActivity" />
         <activity android:name=".tick.LeakActivity" />
-        <activity android:name=".home.HomeActivity" />
+        <activity android:name=".home.MainActivity" />
         <activity android:name=".dynamicfragment.ViewPagerDemoActivity" />
         <activity android:name=".activity.MainActivity">
             <intent-filter>

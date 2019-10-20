@@ -4,13 +4,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import androidx.core.content.ContextCompat;
+import me.yokeyword.fragmentation.ISupportFragment;
+
 import android.text.TextUtils;
 import android.webkit.URLUtil;
 import android.webkit.WebView;
 
-import com.yjnull.latte_core.fragment.BaseFragment;
 import com.yjnull.latte_core.fragment.web.WebFragment;
-import com.yjnull.latte_core.fragment.web.WebDelegateImpl;
+import com.yjnull.latte_core.fragment.web.WebFragmentImpl;
 
 /**
  * Created by zicen on 2018/7/13
@@ -33,10 +34,10 @@ public class Router {
             return true;
         }
 
-        final BaseFragment topDelegate = delegate.getTopDelegate();
-
-        final WebDelegateImpl webDelegate = WebDelegateImpl.create(url);
-        topDelegate.getSupportDelegate().start(webDelegate);
+//        final ISupportFragment topDelegate = delegate.getTopDelegate();
+//
+//        final WebFragmentImpl webDelegate = WebFragmentImpl.create(url);
+//        topDelegate.getSupportDelegate().start(webDelegate);
 
         return true;
     }

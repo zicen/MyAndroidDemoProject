@@ -1,43 +1,38 @@
 package com.yjnull.latte_core.fragment.bottom;
 
-import android.graphics.Color;
 import android.os.Bundle;
-import androidx.annotation.ColorInt;
-import androidx.annotation.Nullable;
-import androidx.appcompat.widget.AppCompatTextView;
-import androidx.appcompat.widget.LinearLayoutCompat;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.RelativeLayout;
 
-import com.joanzapata.iconify.widget.IconTextView;
 import com.yjnull.latte_core.R;
 import com.yjnull.latte_core.R2;
-import com.yjnull.latte_core.fragment.BaseFragment;
+import com.yjnull.latte_core.fragment.BaseMainFragment;
+import com.yjnull.latte_core.ui.loader.bottom.view.BottomBar;
+import com.yjnull.latte_core.ui.loader.bottom.view.BottomBarTab;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import androidx.annotation.Nullable;
 import butterknife.BindView;
 import me.yokeyword.fragmentation.ISupportFragment;
 
 /**
- * Created by zicen on 2018/7/10
+ * Created by zicen
  */
-public abstract class BaseBottomDelegate extends BaseFragment implements View.OnClickListener{
+public abstract class BaseBottomDelegate extends BaseMainFragment {
 
     private final ArrayList<BottomTabBean> TAB_BEANS = new ArrayList<>();
-    private final ArrayList<BottomItemFragment> ITEM_DELEGATES = new ArrayList<>();
-    private final LinkedHashMap<BottomTabBean, BottomItemFragment> ITEMS = new LinkedHashMap<>();
+    private final ArrayList<BaseMainFragment> ITEM_DELEGATES = new ArrayList<>();
+    private final LinkedHashMap<BottomTabBean, BaseMainFragment> ITEMS = new LinkedHashMap<>();
+
     private int mCurrentDelegate = 0; //当前页面
     private int mIndexDelegate = 0;   //进入首页时，需要展示哪个页面
-    private int mClickedColor = Color.RED;
 
-    @BindView(R2.id.bottom_bar)
-    LinearLayoutCompat mBottomBar = null;
+    @BindView(R2.id.bottomBar)
+    BottomBar mBottomBar = null;
 
-    public abstract LinkedHashMap<BottomTabBean, BottomItemFragment> setItems(ItemBuilder builder);
+    public abstract LinkedHashMap<BottomTabBean, BaseMainFragment> setItems(ItemBuilder builder);
 
     @Override
     public Object setLayout() {
@@ -46,83 +41,50 @@ public abstract class BaseBottomDelegate extends BaseFragment implements View.On
 
     public abstract int setIndexDelegate();
 
-    @ColorInt
-    public abstract int setClickedColor();
-
-    @ColorInt
-    protected int setNormalColor() {
-        return Color.GRAY;
-    }
-
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mIndexDelegate = setIndexDelegate();
-        if (setClickedColor() != 0) {
-            mClickedColor = setClickedColor();
-        }
 
         final ItemBuilder builder = ItemBuilder.builder();
-        final LinkedHashMap<BottomTabBean, BottomItemFragment> items = setItems(builder);
+        final LinkedHashMap<BottomTabBean, BaseMainFragment> items = setItems(builder);
         ITEMS.putAll(items);
-        for (Map.Entry<BottomTabBean, BottomItemFragment> item : ITEMS.entrySet()) {
+        for (Map.Entry<BottomTabBean, BaseMainFragment> item : ITEMS.entrySet()) {
             final BottomTabBean key = item.getKey();
-            final BottomItemFragment value = item.getValue();
+            final BaseMainFragment value = item.getValue();
             TAB_BEANS.add(key);
             ITEM_DELEGATES.add(value);
         }
     }
 
-    @Override
-    public void onBindView(@Nullable Bundle savedInstanceState, View rootView) {
-        final int size = ITEMS.size();
-        for (int i = 0; i < size; i++) {
-            LayoutInflater.from(getContext()).inflate(R.layout.bottom_item_icon_text_layout, mBottomBar);
-            final RelativeLayout item = (RelativeLayout) mBottomBar.getChildAt(i);
-            //设置每个底部item的点击事件
-            item.setTag(i);
-            item.setOnClickListener(this);
-            final IconTextView itemIcon = (IconTextView) item.getChildAt(0);
-            final AppCompatTextView itemTitle = (AppCompatTextView) item.getChildAt(1);
-            final BottomTabBean bean = TAB_BEANS.get(i);
-            //初始化数据
-            itemIcon.setText(bean.getIcon());
-            itemTitle.setText(bean.getTitle());
-            if (i == mIndexDelegate) {
-                itemIcon.setTextColor(mClickedColor);
-                itemTitle.setTextColor(mClickedColor);
-            }
+    public void initView(@Nullable Bundle savedInstanceState, View rootView) {
+
+        for (BottomTabBean bottomTabBean : TAB_BEANS) {
+            mBottomBar.addItem(new BottomBarTab(_mActivity, bottomTabBean.getIcon(), bottomTabBean.getTitle()));
         }
+        mBottomBar.setOnTabSelectedListener(new BottomBar.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(int position, int prePosition) {
+                //Fragment显示隐藏，一定要注意先后顺序
+                getSupportDelegate().showHideFragment(ITEM_DELEGATES.get(position), ITEM_DELEGATES.get(prePosition));
+                mCurrentDelegate = position;
+            }
+
+            @Override
+            public void onTabUnselected(int position) {
+
+            }
+
+            @Override
+            public void onTabReselected(int position) {
+
+            }
+        });
 
         //加载多个同级根Fragment,类似Wechat, QQ主页的场景
-        final ISupportFragment[] delegateArray = ITEM_DELEGATES.toArray(new ISupportFragment[size]);
-        getSupportDelegate().loadMultipleRootFragment(R.id.bottom_bar_delegate_container, mIndexDelegate, delegateArray);
+        final ISupportFragment[] delegateArray = ITEM_DELEGATES.toArray(new ISupportFragment[ITEMS.size()]);
+        getSupportDelegate().loadMultipleRootFragment(R.id.fl_tab_container, mIndexDelegate, delegateArray);
     }
 
-    private void resetColor() {
-        final int count = mBottomBar.getChildCount();
-        for (int i = 0; i < count; i++) {
-            final RelativeLayout item = (RelativeLayout) mBottomBar.getChildAt(i);
-            final IconTextView itemIcon = (IconTextView) item.getChildAt(0);
-            final AppCompatTextView itemTitle = (AppCompatTextView) item.getChildAt(1);
-            itemIcon.setTextColor(setNormalColor());
-            itemTitle.setTextColor(setNormalColor());
-        }
-    }
 
-    @Override
-    public void onClick(View v) {
-        final int tag = (int) v.getTag();
-        //颜色变换
-        resetColor();
-        final RelativeLayout item = (RelativeLayout) v;
-        final IconTextView itemIcon = (IconTextView) item.getChildAt(0);
-        final AppCompatTextView itemTitle = (AppCompatTextView) item.getChildAt(1);
-        itemIcon.setTextColor(mClickedColor);
-        itemTitle.setTextColor(mClickedColor);
-
-        //Fragment显示隐藏，一定要注意先后顺序
-        getSupportDelegate().showHideFragment(ITEM_DELEGATES.get(tag), ITEM_DELEGATES.get(mCurrentDelegate));
-        mCurrentDelegate = tag;
-    }
 }

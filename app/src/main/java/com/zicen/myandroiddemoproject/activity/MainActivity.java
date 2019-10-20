@@ -7,7 +7,6 @@ import android.widget.Button;
 
 import com.zicen.myandroiddemoproject.R;
 import com.zicen.myandroiddemoproject.dynamicfragment.ViewPagerDemoActivity;
-import com.zicen.myandroiddemoproject.home.HomeActivity;
 import com.zicen.myandroiddemoproject.leak.MemoryLeakActivity;
 import com.zicen.myandroiddemoproject.tick.LeakActivity;
 
@@ -44,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(this, ViewPagerDemoActivity.class));
                 break;
             case R.id.btn_home:
-                startActivity(new Intent(this, HomeActivity.class));
+                startActivity(new Intent(this, com.zicen.myandroiddemoproject.home.MainActivity.class));
                 break;
             case R.id.btn_leak:
                 startActivity(new Intent(this, LeakActivity.class));
