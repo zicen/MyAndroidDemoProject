@@ -1,4 +1,4 @@
-package com.yjnull.latte_core.ui.loader.bottom.view;
+package com.yjnull.latte_core.ui.bottom;
 
 import android.content.Context;
 import android.content.res.TypedArray;

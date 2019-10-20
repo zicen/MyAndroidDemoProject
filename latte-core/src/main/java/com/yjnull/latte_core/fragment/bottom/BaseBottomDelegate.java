@@ -6,8 +6,8 @@ import android.view.View;
 import com.yjnull.latte_core.R;
 import com.yjnull.latte_core.R2;
 import com.yjnull.latte_core.fragment.BaseMainFragment;
-import com.yjnull.latte_core.ui.loader.bottom.view.BottomBar;
-import com.yjnull.latte_core.ui.loader.bottom.view.BottomBarTab;
+import com.yjnull.latte_core.ui.bottom.BottomBar;
+import com.yjnull.latte_core.ui.bottom.BottomBarTab;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;

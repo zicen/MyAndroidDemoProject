@@ -19,7 +19,7 @@
         android:background="@drawable/actionbar_shadow_up"
         tools:ignore="ContentDescription" />
 
-    <com.yjnull.latte_core.ui.loader.bottom.view.BottomBar
+    <com.yjnull.latte_core.ui.bottom.BottomBar
         android:id="@+id/bottomBar"
         android:layout_width="match_parent"
         android:layout_height="52dp"
