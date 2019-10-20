@@ -19,10 +19,11 @@
             android:textSize="20sp" />
     </androidx.appcompat.widget.Toolbar>
 
-    <FrameLayout
-        android:id="@+id/web_discovery_container"
+    <Button
+        android:id="@+id/btn_anim"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:text="点击跳转动画测试页面"
+        android:layout_height="wrap_content"/>
 
 
 
